@@ -3,6 +3,30 @@ import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+
+    const svgLoader = {
+        test: /\.svg$/,
+        use: {
+            loader: '@svgr/webpack',
+            options: {
+                svgoConfig: {
+                    plugins: [{
+                        name: 'removeViewBox',
+                        active: false
+                    }]
+                }
+            }
+        }
+    };
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -28,5 +52,5 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [cssLoader, typescriptLoader];
+    return [fileLoader, svgLoader, cssLoader, typescriptLoader];
 }
