@@ -2,11 +2,13 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
+    'plugin:i18next/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -18,6 +20,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -32,5 +35,6 @@ module.exports = {
     'no-shadow': 0,
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 1,
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
 };
