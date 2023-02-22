@@ -6,7 +6,7 @@ function AboutPage() {
 
   return (
     <div>
-      {t('about page name')}
+      {t('about_page_name')}
     </div>
   );
 }
