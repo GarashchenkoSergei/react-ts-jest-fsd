@@ -3,17 +3,18 @@ import { type ButtonHTMLAttributes, type FC } from 'react';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
+  DEFAULT = 'default',
   CLEAR = 'clear',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
-  theme: ButtonTheme
+  theme?: ButtonTheme
 }
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
-    children, className, theme, ...otherProps
+    children, className, theme = ButtonTheme.DEFAULT, ...otherProps
   } = props;
 
   return (

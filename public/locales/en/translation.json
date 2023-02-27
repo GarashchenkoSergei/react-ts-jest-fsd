@@ -1,5 +1,7 @@
 {
   "main_page_name": "Main page",
   "language": "EN",
-  "not_found": "Not Found"
+  "not_found": "Not Found",
+  "an_error_has_occurred": "An error has occurred",
+  "reload_the_page": "Reload the page"
 }

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { PageLoader } from 'widgets/PageLoader/PageLoader';
+import { PageLoader } from 'widgets/PageLoader';
 
 function AppRouter() {
   return (
