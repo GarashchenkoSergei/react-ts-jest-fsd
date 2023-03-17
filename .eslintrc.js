@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:i18next/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,14 +12,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', 'jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [1, {
+      extensions: ['.js', 'jsx', '.tsx'],
+    }],
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
     'max-len': 1,
@@ -35,6 +28,15 @@ module.exports = {
     'no-shadow': 0,
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 1,
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      ignoreAttribute: ['data-testid', 'to'],
+    }],
   },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
+    },
+  }],
 };
