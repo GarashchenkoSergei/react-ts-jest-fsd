@@ -2,5 +2,6 @@
   "language": "RU",
   "an_error_has_occurred": "Возникла ошибка",
   "reload_the_page": "Обновить страницу",
-  "toggle": "Тоггл"
+  "toggle": "Тоггл",
+  "login": "Войти"
 }

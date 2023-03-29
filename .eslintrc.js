@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-filename-extension': [1, {
@@ -32,6 +32,10 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'to', 'size'],
     }],
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   overrides: [{
     files: ['**/src/**/*.test.{ts,tsx}'],
